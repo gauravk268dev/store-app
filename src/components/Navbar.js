@@ -1,13 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = () => {  
+  const navStyle = {
+    color: "white"
+  };
+
   return (
     <nav>
-      <h3>Logo</h3>
-      <ul>
-        <li>About</li>
-        <li>Shop</li>
-        <li>Contact</li>
+      <Link to="/" ><h3 style={ navStyle}>Logo</h3></Link>
+      <ul className="nav-links">
+        <Link to="/about"><li style={ navStyle}>About</li></Link>
+        <Link to="/shop"><li style={ navStyle} >Shop</li></Link>
+        <Link to="/contact"><li style={ navStyle} >Contact</li></Link>
       </ul>
     </nav>
   );
