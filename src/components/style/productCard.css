@@ -1,0 +1,17 @@
+.product-card{
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	border: 2px solid black;
+	border-radius: 5px;
+	justify-content: space-around;
+	align-items:center;
+}
+
+.product-card-element{
+	display: flex;
+}
+
+img{
+	max-width: 100px;
+}
