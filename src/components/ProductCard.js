@@ -1,18 +1,18 @@
 import React from "react";
 import "./style/productCard.css";
 
-// {/* <div className="product-card-element">
-//         {/* <img src={image} alt="value"></img>	 */}
-// </div>
-// <div className="product-card-element">
-//   <div className="product-header">
-//     <div>{title}</div>
-//     <div>{price}</div>
-//   </div>
-//   <div className="product-">{description}</div>
-// </div> */}
+const ProductCard = ({
+  image,
+  title,
+  price,
+  description,
+  addToCart,
+  cartItems,
+}) => {
+  const addItemToCart = () => {
+    addToCart(cartItems);
+  };
 
-const ProductCard = ({ image, title, price, description }) => {
   return (
     <div className="product-card col-lg-3 col-md-4 col-sm-6">
       <div className="card">
@@ -30,7 +30,7 @@ const ProductCard = ({ image, title, price, description }) => {
         </ul>
         <div className="card-body">
           <button className="btn btn-info">
-            <a href="/cart" className="card-link">
+            <a href="/cart" className="card-link" onClick={addItemToCart}>
               Add to Cart
             </a>
           </button>

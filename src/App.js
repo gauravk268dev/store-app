@@ -5,12 +5,12 @@ import About from "./components/About";
 import Cart from "./components/Cart";
 import Contact from "./components/Contact";
 import ProductView from "./components/ProductView";
-// import products from "./components/data/products";
+import products from "./components/data/products";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import db from './components/firebase/config';
 
 function App() {
-  const [cart, addToCart] = useState([]);
+  const [cartItems, addToCart] = useState([...products]);
   const [items, setItems] = useState([]);
 
   return (
@@ -22,13 +22,18 @@ function App() {
             path="/"
             exact
             component={() => (
-              <Home setItems={setItems} addToCart={addToCart} items={items} />
+              <Home
+                setItems={setItems}
+                addToCart={addToCart}
+                items={items}
+                cartItems={cartItems}
+              />
             )}
           />
           <Route path="/about" component={() => <About />} />
           <Route
             path="/cart"
-            component={() => <Cart cart={cart} addToCart={addToCart} />}
+            component={() => <Cart cartItems={cartItems} />}
           />
           <Route path="/contact" component={() => <Contact />} />
         </Switch>
@@ -37,11 +42,16 @@ function App() {
   );
 }
 
-const Home = ({ setItems, addToCart, items }) => {
+const Home = ({ setItems, addToCart, items, cartItems }) => {
   return (
     <div>
       <h1>Home Page</h1>
-      <ProductView setItems={setItems} items={items} />
+      <ProductView
+        setItems={setItems}
+        addToCart={addToCart}
+        items={items}
+        cartItems={cartItems}
+      />
     </div>
   );
 };
