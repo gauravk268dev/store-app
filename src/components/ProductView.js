@@ -14,10 +14,7 @@ const ProductView = ({ setItems, addToCart, items, cartItems }) => {
       {items.map((item) => (
         <ProductCard
           key={item.id}
-          image={item.image}
-          title={item.title}
-          price={item.price}
-          description={item.description}
+          item={item}
           addToCart={addToCart}
           cartItems={cartItems}
         />

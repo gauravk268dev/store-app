@@ -1,11 +1,12 @@
 import React from "react";
 import CartCard from "./CartCard";
+import "./style/cart.css";
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ items, cartItems }) => {
   return (
     <div className="cart-page">
       <h1>Cart Page</h1>
-      <div className="cart-items">
+      <div className="cart-items jumbotron">
         {cartItems.map((item) => (
           <CartCard
             key={item.id}

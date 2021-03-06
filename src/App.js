@@ -5,12 +5,12 @@ import About from "./components/About";
 import Cart from "./components/Cart";
 import Contact from "./components/Contact";
 import ProductView from "./components/ProductView";
-import products from "./components/data/products";
+// import products from "./components/data/products";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import db from './components/firebase/config';
 
 function App() {
-  const [cartItems, addToCart] = useState([...products]);
+  const [cartItems, addToCart] = useState([]);
   const [items, setItems] = useState([]);
 
   return (
@@ -33,7 +33,7 @@ function App() {
           <Route path="/about" component={() => <About />} />
           <Route
             path="/cart"
-            component={() => <Cart cartItems={cartItems} />}
+            component={() => <Cart items={items} cartItems={cartItems} />}
           />
           <Route path="/contact" component={() => <Contact />} />
         </Switch>
