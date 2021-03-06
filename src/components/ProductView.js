@@ -1,19 +1,25 @@
-import React, {useState, useEffect} from 'react';
-import ProductCard from './ProductCard';
-import products from './data/products';
+import React, { useState } from "react";
+import ProductCard from "./ProductCard";
+import products from "./data/products";
 import "./style/productView.css";
 
-const ProductView = (props) => {
-	const [items, setItems] = useState(...products);
+const ProductView = () => {
+  const [items, setItems] = useState([...products]);
+  const [cart, addToCart] = useState([]);
 
-	return (
-		<div className="container">
-			{items.map(item =>
-						<ProductCard image={item.image} title={item.title} price={item.price} description={item.description} />
-				)
-			}
-		</div>
-	);
+  return (
+    <div className="product-view row">
+      {items.map((item) => (
+        <ProductCard
+          image={item.image}
+          title={item.title}
+          price={item.price}
+          description={item.description}
+          setItems={setItems}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default ProductView;
