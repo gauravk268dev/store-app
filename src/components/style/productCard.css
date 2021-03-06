@@ -1,12 +1,13 @@
-/* .product-card {
-  display: flex;
+.product-card {
+  /* display: flex;
   flex-direction: column;
   max-width: 500px;
   border: 2px solid black;
   border-radius: 5px;
   justify-content: space-around;
-  align-items: center;
-} */
+  align-items: center; */
+  font-family: "Poppins", sans-serif;
+}
 
 img {
   margin: 0 auto;

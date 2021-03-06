@@ -14,7 +14,7 @@ import "./style/productCard.css";
 
 const ProductCard = ({ image, title, price, description }) => {
   return (
-    <div className="product-card col-3">
+    <div className="product-card col-lg-3 col-md-4 col-sm-6">
       <div className="card">
         <img src={image} className="card-img-top" alt="..."></img>
         <div className="card-body">
@@ -30,12 +30,12 @@ const ProductCard = ({ image, title, price, description }) => {
         </ul>
         <div className="card-body">
           <button className="btn btn-info">
-            <a href="#" className="card-link">
+            <a href="/cart" className="card-link">
               Add to Cart
             </a>
           </button>
           <button className="btn btn-primary">
-            <a href="#" className="card-link">
+            <a href="/cart" className="card-link">
               Order Now
             </a>
           </button>
