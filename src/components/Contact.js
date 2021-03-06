@@ -22,12 +22,12 @@ const Contact = () => {
 
 						<div className="feedback-element feedback-head">
 							<div className="form-group">
-								<label for="name"><h4>Name</h4></label>
+								<label htmlFor="name"><h4>Name</h4></label>
 								<input type="text" className="form-control" name="name" placeholder="Enter name" required></input>
 							</div>
 
 							<div className="form-group">
-								<label for="email"><h4>Email address</h4></label>
+								<label htmlFor="email"><h4>Email address</h4></label>
 								<input type="email" className="form-control" name="email" aria-describedby="emailHelp"
 									placeholder="Enter email" required></input>
 								<small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -36,7 +36,7 @@ const Contact = () => {
 
 						<div className="feedback-element feedback-body">
 							<div className="form-group">
-								<label for="feedback"><h4>Feedback</h4></label>
+								<label htmlFor="feedback"><h4>Feedback</h4></label>
 								<textarea className="form-control" name="feedback"></textarea>
 							</div>
 							<button type="submit" className="btn btn-info">Send</button>

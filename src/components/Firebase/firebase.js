@@ -1,20 +1,39 @@
-import app from 'firebase/app';
 
-const config = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+// var docRef = db.collection("about").doc("MQ0YXJYoXnOxJ6xxFtoY");
+//
+// docRef.get().then((doc) => {
+//     if (doc.exists) {
+//         console.log("Document data:", doc.data());
+//     } else {
+//         // doc.data() will be undefined in this case
+//         console.log("No such document!");
+//     }
+// }).catch((error) => {
+//     console.log("Error getting document:", error);
+// });
+
+const value = async ()=>{
+  const citiesRef = db.collection('about');
+  // const snapshot = await citiesRef.where('name', '==', 'Gaurav').get();
+  // if (snapshot.empty) {
+  //   console.log('No matching documents.');
+  //   return;
+  // };
+  // snapshot.forEach(doc => {
+  //   console.log(doc.id, '=>', doc.data());
+  // });
+
+  const snapshot = await citiesRef.get();
+  snapshot.forEach(doc => {
+    console.log(doc.id, '=>', doc.data());
+  });
 }
 
-class Firebase{
-  constructor() {
-    app.initializeApp(config);
-  }
-}
+value();
 
-export default Firebase;
+
+// const citiesRef = db.collection('about');
+// const snapshot = await citiesRef.get();
+// snapshot.forEach(doc => {
+//   console.log(doc.id, '=>', doc.data());
+// });

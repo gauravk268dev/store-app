@@ -3,7 +3,10 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import Cart from './components/Cart';
 import Contact from './components/Contact';
+import Product_View from './components/Product_View';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {useState} from 'react';
+// import db from './components/firebase/config';
 
 function App() {
   return (
@@ -16,6 +19,7 @@ function App() {
           <Route path="/cart" component={Cart} />
           <Route path="/contact"component={Contact} />
         </Switch>
+        <Product_View />
       </div>
     </Router>
   );
