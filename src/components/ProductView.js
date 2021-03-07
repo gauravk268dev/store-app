@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import products from "./data/products";
 import "./style/productView.css";
 
-const ProductView = ({ setItems, addToCart, items, cartItems }) => {
+const ProductView = ({ setItems, setCartItems, items, cartItems }) => {
   const getProducts = () => {
     setItems(products);
   };
@@ -15,7 +15,7 @@ const ProductView = ({ setItems, addToCart, items, cartItems }) => {
         <ProductCard
           key={item.id}
           item={item}
-          addToCart={addToCart}
+          setCartItems={setCartItems}
           cartItems={cartItems}
         />
       ))}

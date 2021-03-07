@@ -1,9 +1,9 @@
 import React from "react";
 import "./style/productCard.css";
 
-const ProductCard = ({ item, addToCart, cartItems }) => {
+const ProductCard = ({ item, setCartItems, cartItems }) => {
   const addItemToCart = () => {
-    addToCart(...cartItems, item);
+    setCartItems([...cartItems, item]);
     console.log("item", item);
   };
 
